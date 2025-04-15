@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Section -->
+  <div id="login-section" class="card">
+    <h2>Welcome to the Chat</h2>
+    <p>Login or sign up to start chatting!</p>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <div class="button-row">
+      <button id="login-button">Login</button>
+      <button id="signup-button" class="secondary">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Chat Room Section -->
+  <div id="chat-section" class="card" style="display: none;">
+    <h2>Chat Room</h2>
+
+    <!-- Chat Persistence Setting -->
+    <div class="checkbox-container">
+      <label class="checkbox-label">
+        <input type="checkbox" id="persistence-checkbox" />
+        Enable Chat Persistence
+      </label>
+    </div>
+
+    <!-- Messages Area -->
+    <div id="messages" class="messages-container"></div>
+  </div>
+
+  <!-- Message Input Bar (Fixed outside chat section) -->
+  <div id="chat-input-bar" class="input-bar" style="display: flex;">
+    <!-- File Upload Input -->
+    <input type="file" id="file-input" style="display: none" />
+    <button id="upload-button">Upload File</button>
+    
+    <!-- Message Input -->
+    <input type="text" id="message-input" placeholder="Type a message..." />
+    <button id="send-button" title="Send Message">➤</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
